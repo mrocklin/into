@@ -54,7 +54,10 @@ def resource_hdfstore(uri, datapath=None, dshape=None, **kwargs):
     # TODO:
     # 1. Support nested datashapes (e.g. groups)
     # 2. Try translating unicode to ascii?  (PyTables fails here)
-    fn = uri.split('://')[1]
+    if '://' in uri:
+        fn = uri.split('://')[1]
+    else:
+        fn = uri
     f = pd.HDFStore(fn)
     if dshape is None:
         if datapath:

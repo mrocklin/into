@@ -29,6 +29,8 @@ with ignoring(ImportError):
 with ignoring(ImportError):
      from .backends.hdfstore import HDFStore
 with ignoring(ImportError):
+     from .backends.hdf5 import resource
+with ignoring(ImportError):
      from .backends.pytables import tables
 with ignoring(ImportError):
      from .backends.dynd import nd
